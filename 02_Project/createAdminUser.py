@@ -1,7 +1,6 @@
 import json
 
-AdminJsonFilePath = 'Admin.json'
-UserJsonFilePath = 'User.json'
+
 
 # Adding Admin Data 
 
@@ -10,15 +9,15 @@ def LoadAdminData(Filepath):
         with open(Filepath,'r') as Json_file:
             return json.load(Json_file)
     except FileNotFoundError:
-        return f"file not found creating new file "
+        return []
 
 def Add_New_Admin(Filepath):
 
     data = LoadAdminData(Filepath)
-    print(data)
+    # print(data)
 
-    admin_name = input("Enter Admin Name: ")
-    admin_password = input("Enter Admin Password: ")
+    admin_name = input("\tEnter Admin Name: ")
+    admin_password = input("\tEnter Admin Password: ")
 
     new_admin = {
         "AdminName": admin_name,
@@ -32,9 +31,9 @@ def Add_New_Admin(Filepath):
     with open(Filepath,'w') as json_file:
         json.dump(data, json_file,indent=4)
 
-    print("Successfull Added New Admin!!!")
+    print("\t======== Successfull Added New Admin!!! ========")
 
-Add_New_Admin(AdminJsonFilePath)
+# Add_New_Admin(AdminJsonFilePath)
 
 # Adding User Data 
 
@@ -43,15 +42,15 @@ def LoadUserData(Filepath):
         with open(Filepath,'r') as Json_file:
             return json.load(Json_file)
     except FileNotFoundError:
-        return f"file not found creating new file"
+        return []
 
 def Add_New_User(Filepath):
     
     data = LoadUserData(Filepath)
-    print(data)
+    # print(data)
 
-    user_name = input("Enter User Name: ")
-    user_password = input("Enter User Password: ")
+    user_name = input("\tEnter User Name: ")
+    user_password = input("\tEnter User Password: ")
 
     new_User = {
         "UserName": user_name,
@@ -65,7 +64,7 @@ def Add_New_User(Filepath):
     with open(Filepath,'w') as json_file:
         json.dump(data, json_file,indent=4)
 
-    print("Successfull Added New User!!!")
+    print("\t======== Successfull Added New User!!! ========")
 
 # Add_New_User(UserJsonFilePath)
 

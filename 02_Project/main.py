@@ -1,11 +1,10 @@
 import login
 
-
 def main():
     print("\n\n================== Welcome to the Demo Marketplace ==================\n")
 
     while(True):
-        print("\n\n\t\t---------- Press Key ----------\n")
+        print("\n\t\t---------- Press Key ----------\n")
         print("\t\t1 : Create Admin")
         print("\t\t2 : Create User")
         print("\t\t3 : Admin Log in")
@@ -14,6 +13,7 @@ def main():
         
         user_input = int(input("\nEnter value :"))
 
+       
         match user_input:
 
             case 1: 
