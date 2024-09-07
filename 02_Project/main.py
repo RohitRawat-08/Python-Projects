@@ -1,6 +1,7 @@
-from login import CreateAdminLogIn , CreateUserLogIn
+import login
 
-def display():
+
+def main():
     print("\n\n================== Welcome to the Demo Marketplace ==================\n")
 
     while(True):
@@ -17,11 +18,13 @@ def display():
 
             case 1: 
                 # print("Create Admin Log in")
-                CreateAdminLogIn()
+                login.CreateAdmin()
+                # ...
 
             case 2:
                 # print("Create User Log in")
-                CreateUserLogIn()
+                login.CreateUser()
+                # ...
 
             case 3:
                 print("Admin Log In")
@@ -34,5 +37,5 @@ def display():
 
 
 
-display()
-
+if __name__ == "__main__":
+    main()
