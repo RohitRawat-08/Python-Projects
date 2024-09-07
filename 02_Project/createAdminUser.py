@@ -1,30 +1,26 @@
 import json
 
 
-
 # Adding Admin Data 
+# AdminJsonFilePath = 'Admin.json'
+
 
 def LoadAdminData(Filepath):
     try:
         with open(Filepath,'r') as Json_file:
             return json.load(Json_file)
     except FileNotFoundError:
-        return []
+        return [{}]
 
 def Add_New_Admin(Filepath):
 
     data = LoadAdminData(Filepath)
-    # print(data)
+    # print(data[0])
 
     admin_name = input("\tEnter Admin Name: ")
     admin_password = input("\tEnter Admin Password: ")
 
-    new_admin = {
-        "AdminName": admin_name,
-        "Password": admin_password
-    }
-
-    data.append(new_admin)
+    data[0].update({admin_name:admin_password})
 
     # print(data)
 
@@ -33,16 +29,19 @@ def Add_New_Admin(Filepath):
 
     print("\t======== Successfull Added New Admin!!! ========")
 
+
 # Add_New_Admin(AdminJsonFilePath)
 
 # Adding User Data 
+# UserJsonFilePath = 'User.json'
+
 
 def LoadUserData(Filepath):
     try:
         with open(Filepath,'r') as Json_file:
             return json.load(Json_file)
     except FileNotFoundError:
-        return []
+        return [{}]
 
 def Add_New_User(Filepath):
     
@@ -52,12 +51,8 @@ def Add_New_User(Filepath):
     user_name = input("\tEnter User Name: ")
     user_password = input("\tEnter User Password: ")
 
-    new_User = {
-        "UserName": user_name,
-        "Password": user_password
-    }
 
-    data.append(new_User)
+    data[0].update({user_name:user_password})
 
     # print(data)
 
@@ -66,7 +61,8 @@ def Add_New_User(Filepath):
 
     print("\t======== Successfull Added New User!!! ========")
 
-# Add_New_User(UserJsonFilePath)
+
+
 
 
 

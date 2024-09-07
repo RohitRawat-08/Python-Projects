@@ -27,11 +27,10 @@ def main():
                 # ...
 
             case 3:
-                print("Admin Log In")
+                login.AdminLogIn()
 
             case 4:
-                print("User Log In")
-
+                login.UserLogIn()
             case 5:
                 exit()
 
